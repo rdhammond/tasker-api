@@ -6,6 +6,15 @@
   "license": "MIT",
   "dependencies": {
     "node-sqlite": "^0.0.2-security",
-    "restify": "^6.3.2"
+    "restify": "^6.3.2",
+    "sqlite": "^2.8.0"
+  },
+  "scripts": {
+    "test": "mocha",
+    "start": "node index.js"
+  },
+  "devDependencies": {
+    "jsonfile": "^4.0.0",
+    "should": "^13.1.3"
   }
 }

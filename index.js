@@ -5,9 +5,11 @@ const Config = require('./lib/Config'),
 
 const config = new Config(`${__dirname}/config.json`);
 
-const db = new TasksDb(config.sqlite);
-await db.start();
+async function init() {
+	const db = new TasksDb();
+	await db.open(config);
 
-const server = new Server(config);
-new TasksRouter(db).addTo(server);
-server.start();
+	const server = new Server(config);
+	new TasksRouter(db).addTo(server);
+	server.start();
+}
