@@ -1,0 +1,11 @@
+{
+  "name": "tasker-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "R. Daniel Hammond",
+  "license": "MIT",
+  "dependencies": {
+    "node-sqlite": "^0.0.2-security",
+    "restify": "^6.3.2"
+  }
+}

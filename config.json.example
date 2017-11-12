@@ -1,0 +1,4 @@
+{
+	"sqlite": "./db/tasker-api.sqlite",
+	"port": 8888
+}
