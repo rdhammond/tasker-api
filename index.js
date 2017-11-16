@@ -10,6 +10,7 @@ async function init() {
 	await db.open(config);
 
 	const server = new Server(config);
-	new TasksRouter(db).addTo(server);
+	const tasks = new TasksRouter(db);
+	tasks.addTo(server.api);
 	server.start();
 }

@@ -59,10 +59,6 @@ describe('TasksDb', function() {
 			await db.open({sqlite: DB_PATH});
 		});
 
-		it('should reject unknown types', function() {
-			return db.get('blargh').should.be.rejected();
-		});
-
 		it('should fetch for a given type', async function() {
 			const items = await db.get('daily');
 			items.length.should.eql(testEntries.length);
