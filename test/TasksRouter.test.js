@@ -94,7 +94,7 @@ describe('TasksRouter', function() {
 
 			const router = new TasksRouter(db);
 			const req = {params: {type: 'daily'}};
-			const res = {send: sinon.spy()};
+			const res = {send: sinon.stub()};
 			await router.get(req, res, next);
 
 			res.send.should.be.calledOnce();

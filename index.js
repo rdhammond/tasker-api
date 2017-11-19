@@ -9,7 +9,8 @@ async function init() {
 	const db = new TasksDb();
 	await db.open(config);
 
-	const server = new Server(config);
+	const restSrv = restify.createServer();
+	const server = new Server(config, restSrv);
 	const tasks = new TasksRouter(db);
 	tasks.addTo(server.api);
 	server.start();
